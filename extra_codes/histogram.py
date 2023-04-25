@@ -1,0 +1,43 @@
+import cv2
+from matplotlib import pyplot as plt
+
+img1 = cv2.imread(r"assets\hands.jpeg",1)
+img2 = cv2.imread(r"assets\hands.jpeg",0)
+histogram1 = cv2.calcHist([img1], [0], None, [256], [0, 256])
+plt.title("Color Image")
+plt.xlabel("Bins")
+plt.ylabel("No. of pixels")
+plt.plot(histogram1)
+cv2.imshow("Color image", img1)
+plt.show()
+
+histogram2 = cv2.calcHist([img2], [0], None, [256], [0, 256])
+plt.title("Grey Image")
+plt.xlabel("Bins")
+plt.ylabel("No. of pixels")
+plt.plot(histogram2)
+cv2.imshow("Grey image", img2)
+plt.show()
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+img3 = cv2.imread(r"assets\Lenna.png",1)
+img4 = cv2.imread(r"assets\Lenna.png",0)
+histogram3 = cv2.calcHist([img3], [0], None, [256], [0, 256])
+plt.title("Color Image")
+plt.xlabel("Bins")
+plt.ylabel("No. of pixels")
+plt.plot(histogram3)
+cv2.imshow("Color image", img3)
+plt.show()
+
+histogram4 = cv2.calcHist([img4], [0], None, [256], [0, 256])
+plt.title("Grey Image")
+plt.xlabel("Bins")
+plt.ylabel("No. of pixels")
+plt.plot(histogram4)
+cv2.imshow("Grey image", img4)
+plt.show()
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
